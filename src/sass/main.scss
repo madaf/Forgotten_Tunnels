@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'disposableDroid';
+    src: url(../../fonts/DisposableDroidBB.ttf);
+}
+@font-face {
+    font-family: 'ancient';
+    src: url(../../fonts/AncientModernTales.otf), url(../../fonts/AncientModernTales.woff);
+}
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(4px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+html{
+    cursor: url("../../img/cursor.png"), auto;
+}
+body{
+    background: url("../../img/background.png");
+   
+}
+#options, #inventory, #life{
+    display:none;
+}
+
+#stick{
+    background: url("../../img/stick.png") no-repeat center;
+}
+
+#sword{
+    background: url("../../img/sword.png") no-repeat center;
+}
+
+#potion{
+    background: url("../../img/potion.png") no-repeat center;
+}
+.dragonAnimation{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+.wrap{
+    background: rgba(255,255,255, 0.3);
+    position: relative;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 700px;
+    min-height: 550px;
+    border: 3px dashed green;
+    font-family: 'disposableDroid';
+    font-size: 20px;
+    #imageWrap{
+        display: none;
+        background: url("../../img/cave.png") 100%/cover;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        bottom: 120px;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+    button{
+        background: transparent;
+        border: none;
+        font-size: 25px;
+        cursor: url("../../img/cursor.png"), auto;
+        &:hover{
+            color: red;
+            cursor: url("../../img/cursor.png"), auto;
+        }
+    }
+    #gameName{
+        font-family: 'ancient';
+        font-size: 60px;
+        margin-top: 20%;
+    }
+    #question{
+        font-size: 25px;
+    }
+    #options{
+        position: absolute;
+        bottom: 0;
+        width: 700px;
+        height: 70px;
+        background-image: url("../../img/rock_texture_pixel.png");
+        margin-bottom: 0;
+        padding: 20px 0;
+        list-style-type: none;
+        color: #fff;
+        
+        li:hover{
+            color: red;
+        }
+    }
+    #life{
+        position: absolute;
+        bottom: 100px;
+    }
+    #inventoryTitle{
+        display: none;
+        position: absolute;
+        bottom: 250px;
+        right: 5px;
+    }
+    #inventory{
+        position: absolute;
+        background: url("../../img/inventory.png");
+        display: none;
+        grid-template-columns: 46px 46px;
+        padding: 2px;
+        grid-gap: 8px;
+        list-style-type: none;
+        right: 5px;
+        bottom: 100px;
+        height: 140px;
+        width: 100px;
+        border: 1px dashed rgb(82, 81, 81);
+        li{
+            border: 1px dashed rgb(82, 81, 81);
+        }
+        &:hover{
+            cursor: url("../../img/cursor_hand.png"), auto;
+        }
+    }
+    #damageFromDragon, #damageToDragon{
+        position: absolute;
+    } 
+    #damageToDragon{
+        bottom: 250px;
+        color: blue;
+    }
+    #damageFromDragon{
+        bottom: 220px;
+        color: red;
+    }
+    #dragonLife{
+        position: absolute;
+        bottom: 100px;
+        right: 120px;
+    }
+    #paragraphSword{
+        position: absolute;
+        bottom: 230px;
+        right: -50px;
+        background: grey;
+        padding: 4px;
+    }
+    #paragraphAgain{
+        font-size: 25px;
+        &:hover{
+            color: red;
+        }
+    }
+}
+.credits{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'disposableDroid';
+    p{
+        margin: 0;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        &:hover{
+            color: red;
+        }
+    }
+}
