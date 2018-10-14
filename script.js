@@ -115,30 +115,38 @@ function tryAgain() {
     })
 }
 
+function openChestMathProbability(){
+    if (Math.floor(Math.random() * 3) + 1 === 3) {
+        ask.innerHTML = "You found a sword and you put it in your inventory, but fate wasn't in your favor! A trap was activated and you lost 1 life, you continue your journey and open the door and you see a large man. What do you do?";
+        life--;
+        displayLife();
+
+    } else {
+        ask.innerHTML = "You found a sword and you put it in your inventory, you also got lucky and nothing else happened. You continue your journey and open the door and you see a large man. What do you do?";
+    }
+}
+
+function addSword(){
+    const sword = document.querySelectorAll(".inventory")[1];;
+    sword.setAttribute("id", "sword");
+    document.getElementById("sword").addEventListener("mouseover", function () {
+        let para = document.createElement("p");
+        let node = document.createTextNode("Damage: 1-3");
+        para.appendChild(node);
+        document.querySelector(".wrap").appendChild(para);
+        para.setAttribute("id", "paragraphSword");
+    })
+    document.getElementById("sword").addEventListener("mouseout", function () {
+        document.getElementById("paragraphSword").remove();
+    })
+}
+
 function gameCodeBlock() {
     answers.forEach(answer => {
         answer.addEventListener("click", function () {
             if (answer.innerHTML === "Open chest") {
-                if (Math.floor(Math.random() * 3) + 1 === 3) {
-                    ask.innerHTML = "You found a sword and you put it in your inventory, but fate wasn't in your favor! A trap was activated and you lost 1 life, you continue your journey and open the door and you see a large man. What do you do?";
-                    life--;
-                    displayLife();
-
-                } else {
-                    ask.innerHTML = "You found a sword and you put it in your inventory, you also got lucky and nothing else happened. You continue your journey and open the door and you see a large man. What do you do?";
-                }
-                var sword = document.querySelectorAll(".inventory")[1];;
-                sword.setAttribute("id", "sword");
-                document.getElementById("sword").addEventListener("mouseover", function () {
-                    let para = document.createElement("p");
-                    let node = document.createTextNode("Damage: 1-3");
-                    para.appendChild(node);
-                    document.querySelector(".wrap").appendChild(para);
-                    para.setAttribute("id", "paragraphSword");
-                })
-                document.getElementById("sword").addEventListener("mouseout", function () {
-                    document.getElementById("paragraphSword").remove();
-                })
+                openChestMathProbability();
+                addSword();
                 firstOption.innerHTML = "Attack him before he realizes you are there";
                 secondOption.innerHTML = "Try to talk with him";
                 imagePlaceholder.style.background = 'url("img/man.png") 100%/cover';
@@ -348,26 +356,8 @@ answers.forEach(answer => {
                         answers.forEach(answer => {
                             answer.addEventListener("click", function () {
                                 if (answer.innerHTML === "Open chest") {
-                                    if (Math.floor(Math.random() * 3) + 1 === 3) {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, but fate wasn't in your favor! A trap was activated and you lost 1 life, you continue your journey and open the door and you see a large man. What do you do?";
-                                        life--;
-                                        displayLife();
-
-                                    } else {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, you also got lucky and nothing else happened. You continue your journey and open the door and you see a large man. What do you do?";
-                                    }
-                                    var sword = document.querySelectorAll(".inventory")[1];;
-                                    sword.setAttribute("id", "sword");
-                                    document.getElementById("sword").addEventListener("mouseover", function () {
-                                        var para = document.createElement("p");
-                                        var node = document.createTextNode("Damage: 1-3");
-                                        para.appendChild(node);
-                                        document.querySelector(".wrap").appendChild(para);
-                                        para.setAttribute("id", "paragraphSword");
-                                    })
-                                    document.getElementById("sword").addEventListener("mouseout", function () {
-                                        document.getElementById("paragraphSword").remove();
-                                    })
+                                    openChestMathProbability();
+                                    addSword();
                                     firstOption.innerHTML = "Attack him before he realizes you are there";
                                     secondOption.innerHTML = "Try to talk with him";
                                     imagePlaceholder.style.background = 'url("img/man.png") 100%/cover';
@@ -489,26 +479,8 @@ answers.forEach(answer => {
                         answers.forEach(answer => {
                             answer.addEventListener("click", function () {
                                 if (answer.innerHTML === "Open chest") {
-                                    if (Math.floor(Math.random() * 3) + 1 === 3) {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, but fate wasn't in your favor! A trap was activated and you lost 1 life, you continue your journey and open the door and you see a large man. What do you do?";
-                                        life--;
-                                        displayLife();
-
-                                    } else {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, you also got lucky and nothing else happened. You continue your journey and open the door and you see a large man. What do you do?";
-                                    }
-                                    var sword = document.querySelectorAll(".inventory")[1];;
-                                    sword.setAttribute("id", "sword");
-                                    document.getElementById("sword").addEventListener("mouseover", function () {
-                                        var para = document.createElement("p");
-                                        var node = document.createTextNode("Damage: 1-3");
-                                        para.appendChild(node);
-                                        document.querySelector(".wrap").appendChild(para);
-                                        para.setAttribute("id", "paragraphSword");
-                                    })
-                                    document.getElementById("sword").addEventListener("mouseout", function () {
-                                        document.getElementById("paragraphSword").remove();
-                                    })
+                                    openChestMathProbability();
+                                    addSword();
                                     firstOption.innerHTML = "Attack him before he realizes you are there";
                                     secondOption.innerHTML = "Try to talk with him";
                                     imagePlaceholder.style.background = 'url("img/man.png") 100%/cover';
@@ -639,26 +611,8 @@ answers.forEach(answer => {
                         answers.forEach(answer => {
                             answer.addEventListener("click", function () {
                                 if (answer.innerHTML === "Open chest") {
-                                    if (Math.floor(Math.random() * 3) + 1 === 3) {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, but fate wasn't in your favor! A trap was activated and you lost 1 life, you continue your journey and open the door and you see a large man. What do you do?";
-                                        life--;
-                                        displayLife();
-
-                                    } else {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, you also got lucky and nothing else happened. You continue your journey and open the door and you see a large man. What do you do?";
-                                    }
-                                    var sword = document.querySelectorAll(".inventory")[1];;
-                                    sword.setAttribute("id", "sword");
-                                    document.getElementById("sword").addEventListener("mouseover", function () {
-                                        var para = document.createElement("p");
-                                        var node = document.createTextNode("Damage: 1-3");
-                                        para.appendChild(node);
-                                        document.querySelector(".wrap").appendChild(para);
-                                        para.setAttribute("id", "paragraphSword");
-                                    })
-                                    document.getElementById("sword").addEventListener("mouseout", function () {
-                                        document.getElementById("paragraphSword").remove();
-                                    })
+                                    openChestMathProbability();
+                                    addSword();
                                     firstOption.innerHTML = "Attack him before he realizes you are there";
                                     secondOption.innerHTML = "Try to talk with him";
                                     imagePlaceholder.style.background = 'url("img/man.png") 100%/cover';
@@ -778,26 +732,8 @@ answers.forEach(answer => {
                         answers.forEach(answer => {
                             answer.addEventListener("click", function () {
                                 if (answer.innerHTML === "Open chest") {
-                                    if (Math.floor(Math.random() * 3) + 1 === 3) {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, but fate wasn't in your favor! A trap was activated and you lost 1 life, you continue your journey and open the door and you see a large man. What do you do?";
-                                        life--;
-                                        displayLife();
-
-                                    } else {
-                                        ask.innerHTML = "You found a sword and you put it in your inventory, you also got lucky and nothing else happened. You continue your journey and open the door and you see a large man. What do you do?";
-                                    }
-                                    var sword = document.querySelectorAll(".inventory")[1];;
-                                    sword.setAttribute("id", "sword");
-                                    document.getElementById("sword").addEventListener("mouseover", function () {
-                                        var para = document.createElement("p");
-                                        var node = document.createTextNode("Damage: 1-3");
-                                        para.appendChild(node);
-                                        document.querySelector(".wrap").appendChild(para);
-                                        para.setAttribute("id", "paragraphSword");
-                                    })
-                                    document.getElementById("sword").addEventListener("mouseout", function () {
-                                        document.getElementById("paragraphSword").remove();
-                                    })
+                                    openChestMathProbability();
+                                    addSword();
                                     firstOption.innerHTML = "Attack him before he realizes you are there";
                                     secondOption.innerHTML = "Try to talk with him";
                                     imagePlaceholder.style.background = 'url("img/man.png") 100%/cover';
